@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="515.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BitSim.InGameController">
+   <children>
+      <Label fx:id="label1" alignment="CENTER" layoutX="242.0" layoutY="17.0" text="Bank Balance" />
+      <Label fx:id="bank_balance" alignment="CENTER" layoutX="238.0" layoutY="44.0" prefHeight="20.0" prefWidth="93.0" style="-fx-background-color: honeydew;" />
+      <Label fx:id="fullname" layoutX="71.0" layoutY="25.0" prefHeight="20.0" prefWidth="103.0" style="-fx-background-color: honeydew;" />
+      <Label fx:id="label2" layoutX="14.0" layoutY="391.0" text="Happiness" />
+      <Label fx:id="label3" layoutX="23.0" layoutY="419.0" text="Health" />
+      <Label fx:id="label4" layoutX="23.0" layoutY="475.0" text="Looks" />
+      <Label fx:id="label5" layoutX="23.0" layoutY="449.0" text="Smarts" />
+      <Label fx:id="label6" alignment="CENTER" layoutX="217.0" layoutY="45.0" prefHeight="18.0" prefWidth="24.0" text="\$" />
+      <ProgressBar fx:id="happiness" layoutX="92.0" layoutY="390.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="health" layoutX="92.0" layoutY="418.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="smarts" layoutX="92.0" layoutY="448.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="looks" layoutX="92.0" layoutY="474.0" prefWidth="200.0" progress="0.0" />
+      <ImageView fx:id="simProfile" fitHeight="45.0" fitWidth="37.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@1024px-Gnome-stock_person.png.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="age" layoutX="103.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleAgeButtonAction" prefHeight="48.0" prefWidth="127.0" style="-fx-background-color: dodgerblue;" text="Age" textFill="WHITE" />
+      <TextArea fx:id="story" editable="false" layoutX="56.0" layoutY="101.0" prefHeight="212.0" prefWidth="220.0" style="-fx-background-color: linen;" />
+      <TabPane layoutX="331.0" prefHeight="515.0" prefWidth="277.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Occupation">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="455.0" prefWidth="267.0">
+                     <children>
+                        <Accordion layoutX="-2.0" layoutY="-3.0" prefHeight="458.0" prefWidth="357.0">
+                           <panes>
+                              <TitledPane animated="false" prefHeight="402.0" prefWidth="302.0" text="You">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="344.0">
+                                       <children>
+                                          <Label layoutX="30.0" layoutY="31.0" text="Current Occupation " textFill="#4fc8ff">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="98.0" layoutY="126.0" text="Income" textFill="#4fc8ff">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="income" layoutX="105.0" layoutY="173.0" prefHeight="18.0" prefWidth="64.0" style="-fx-background-color: honeydew;" textFill="#4fc8ff">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="occupation" alignment="CENTER" layoutX="85.0" layoutY="79.0" prefHeight="18.0" prefWidth="103.0" style="-fx-background-color: honeydew;" textFill="#4fc8ff">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="77.0" layoutY="165.0" text="\$" textFill="#1b9a17">
+                                             <font>
+                                                <Font size="29.0" />
+                                             </font>
+                                          </Label>
+                                          <Button alignment="CENTER" layoutX="30.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleRaise" style="-fx-background-color: dodgerblue;" text="Ask for Raise" textFill="WHITE" />
+                                          <Button alignment="CENTER" layoutX="160.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleResign" style="-fx-background-color: dodgerblue;" text="Resign" textFill="WHITE" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" prefHeight="77.0" prefWidth="249.0" text="Get a Job">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ChoiceBox fx:id="jobBox" layoutX="69.0" layoutY="20.0" prefWidth="150.0" />
+                                          <Button layoutX="97.0" layoutY="279.0" mnemonicParsing="false" onAction="#handleApplyJob" style="-fx-background-color: dodgerblue;" text="Apply for Job" textFill="WHITE" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                            <TitledPane animated="false" prefHeight="478.0" prefWidth="357.0" text="Education">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ChoiceBox fx:id="educationBox" layoutX="66.0" layoutY="27.0" prefWidth="150.0" />
+                                          <Button layoutX="78.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleApplyEducation" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: dodgerblue;" text="Apply!" textFill="WHITE" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                           </panes>
+                        </Accordion>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab closable="false" text="Assets">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Accordion prefHeight="455.0" prefWidth="277.0">
+                          <panes>
+                            <TitledPane animated="false" prefHeight="390.0" prefWidth="271.0" text="Properties">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="361.0" prefWidth="249.0">
+                                       <children>
+                                          <ChoiceBox fx:id="propertiesBox" layoutX="50.0" layoutY="77.0" prefHeight="25.0" prefWidth="155.0" />
+                                          <Button alignment="CENTER" layoutX="87.0" layoutY="120.0" mnemonicParsing="false" onAction="#handleBuyProperty" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: dodgerblue;" text="Buy" textFill="WHITE" />
+                                          <Label layoutX="66.0" layoutY="43.0" text="Properties for Sale" textFill="#4fc8ff">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="65.0" layoutY="202.0" text="Sell your Properties" textFill="#4fc8ff">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="sellPropertiesBox" layoutX="53.0" layoutY="239.0" prefHeight="26.0" prefWidth="152.0" />
+                                          <Button alignment="CENTER" layoutX="83.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleSellProperty" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: dodgerblue;" text="Sell" textFill="WHITE" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane animated="false" text="Vehicles">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ChoiceBox fx:id="vehiclesBox" layoutX="58.0" layoutY="85.0" prefHeight="25.0" prefWidth="160.0" />
+                                          <Button alignment="CENTER" layoutX="91.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleBuyVehicle" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: dodgerblue;" text="Buy" textFill="WHITE" />
+                                          <Label layoutX="83.0" layoutY="45.0" text="Vehicles for Sale" textFill="#4fc8ff">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="sellVehiclesBox" layoutX="55.0" layoutY="213.0" prefHeight="26.0" prefWidth="166.0" />
+                                          <Label layoutX="79.0" layoutY="181.0" text="Sell your Vehicles" textFill="#4fc8ff">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Button alignment="CENTER" layoutX="91.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleSellVehicle" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: dodgerblue;" text="Sell Vehicle" textFill="WHITE" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Activities">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="7.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleMindBody" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: dodgerblue;" text="Mind &amp; Body" textFill="WHITE" />
+                        <Button layoutX="7.0" layoutY="49.0" mnemonicParsing="false" onAction="#handleSalonSpa" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: dodgerblue;" text="Salon &amp; Spa" textFill="WHITE" />
+                        <Button layoutX="7.0" layoutY="96.0" mnemonicParsing="false" onAction="#handleDoctor" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: dodgerblue;" text="Doctor" textFill="WHITE" />
+                        <Button layoutX="7.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleMovieTheater" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: dodgerblue;" text="Movie Theater" textFill="WHITE" />
+                        <Button layoutX="7.0" layoutY="187.0" mnemonicParsing="false" onAction="#handlePlasticSurgery" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: dodgerblue;" text="Plastic Surgery" textFill="WHITE" />
+                        <Button layoutX="7.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleVacation" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: dodgerblue;" text="Vacation" textFill="WHITE" />
+                        <Button layoutX="7.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleLicenses" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: dodgerblue;" text="Licenses" textFill="WHITE" />
+                        <Button layoutX="7.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleSurrender" prefHeight="32.0" prefWidth="263.0" style="-fx-background-color: dodgerblue;" text="Surrender" textFill="WHITE" />
+                        <Button alignment="CENTER" layoutX="5.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleSaveLife" prefHeight="32.0" prefWidth="268.0" style="-fx-background-color: dodgerblue;" text="Save Life" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

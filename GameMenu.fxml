@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="241.0" style="-fx-background-color: darkcyan;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BitSim.GameMenuController">
+   <children>
+      <Label fx:id="label1" layoutX="90.0" layoutY="50.0" text="First Name" textFill="WHITE" />
+      <Label fx:id="label2" layoutX="91.0" layoutY="99.0" text="Last Name" textFill="WHITE" />
+      <Label fx:id="label3" layoutX="98.0" layoutY="147.0" text="Gender" textFill="WHITE" />
+      <Label fx:id="label4" layoutX="103.0" layoutY="256.0" text="OR" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <Label fx:id="errorLabel" alignment="CENTER" layoutY="348.0" prefHeight="17.0" prefWidth="235.0" textFill="RED" />
+      <TextField fx:id="firstname" layoutX="67.0" layoutY="67.0" prefHeight="25.0" prefWidth="101.0" />
+      <TextField fx:id="lastname" layoutX="67.0" layoutY="116.0" prefHeight="25.0" prefWidth="101.0" />
+      <ChoiceBox fx:id="genders" layoutX="84.0" layoutY="170.0" value="Female">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Female" />
+               <String fx:value="Male" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Button fx:id="newGame" layoutX="90.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleNewGameAction" style="-fx-background-color: darkred;" text="New Life" textFill="WHITE" />
+      <Button fx:id="loadGame" layoutX="89.0" layoutY="295.0" mnemonicParsing="false" onAction="#handleLoadButton" style="-fx-background-color: darkred;" text="Load Life" textFill="WHITE" />
+   </children>
+</AnchorPane>
